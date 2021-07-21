@@ -6,7 +6,7 @@
   border-radius: 0.5rem;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .wrapper {
     width: 75%;
   }
