@@ -12,7 +12,7 @@ const Form = () => {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=utf-8",
-        Accept: "application/json",
+        'Accept' : 'application/json',
       },
       body: JSON.stringify(obj),
     })
