@@ -1,0 +1,45 @@
+.wrapper {
+  padding: 1.5rem;
+  margin: auto;
+  width: 50%;
+  background-color: #e2e2e2;
+  border-radius: 0.5rem;
+}
+
+.btn {
+  margin-top: 1rem;
+  background-color: #0062cc;
+  color: #fff;
+  padding: 0.6rem;
+  font-size: 1rem;
+  border-radius: 0.3rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+p {
+  font-size: 1.3rem;
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+label,
+input {
+  font-size: 1rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: lighter;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.4rem;
+  /* display: block; */
+  border-radius: 0.3rem;
+  margin-top: 0.3rem;
+  border: 1px solid #b1a6a6;
+}
+
+div {
+  margin-top: 1rem;
+}
