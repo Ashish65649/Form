@@ -7,7 +7,8 @@ const Form = () => {
   const [password, setPassword] = useState("");
 
   function sendDataToServer(obj) {
-    fetch("http://localhost:9090/submit", {
+    console.log(obj)
+    fetch("https://form-spring.herokuapp.com/submit", {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=utf-8",
