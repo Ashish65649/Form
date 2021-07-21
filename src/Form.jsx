@@ -5,20 +5,21 @@ const Form = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [response, setResponse] = useState("");
 
   function sendDataToServer(obj) {
-    console.log(obj)
+    console.log(obj);
     fetch("https://form-spring.herokuapp.com/submit", {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=utf-8",
-        'Accept' : 'application/json',
+        Accept: "application/json",
       },
       body: JSON.stringify(obj),
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
+        setResponse(JSON.stringify(data));
       })
       .catch((error) => console.log(error.message));
   }
@@ -73,6 +74,7 @@ const Form = () => {
           </div>
           <button className="btn">Submit</button>
         </form>
+        <p> {response} </p>
       </div>
     </React.Fragment>
   );
