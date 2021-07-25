@@ -5,10 +5,12 @@ const Form = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [response, setResponse] = useState("");
+  const [sName, setsName] = useState("");
+  const [sEmail, setsEmail] = useState("");
+  const [sPassword, setsPassword] = useState("");
+  const [show, setShow] = useState("none");
 
   function sendDataToServer(obj) {
-    console.log(obj);
     fetch("https://form-spring.herokuapp.com/submit", {
       method: "POST",
       headers: {
@@ -19,7 +21,10 @@ const Form = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        setResponse(JSON.stringify(data));
+        setShow("block");
+        setsName(data.userName);
+        setsPassword(data.userPassword);
+        setsEmail(data.userEmail);
       })
       .catch((error) => console.log(error.message));
   }
@@ -35,7 +40,7 @@ const Form = () => {
   }
 
   return (
-    <React.Fragment>
+    <>
       <div className="wrapper">
         <p>Application Form</p>
         <form onSubmit={submitForm}>
@@ -74,9 +79,13 @@ const Form = () => {
           </div>
           <button className="btn">Submit</button>
         </form>
-        <p> {response} </p>
+        <div style={{ display: show, fontFamily: "verdana" }}>
+          <p> Name: {sName} </p>
+          <p> Email: {sEmail} </p>
+          <p> Password: {sPassword} </p>
+        </div>
       </div>
-    </React.Fragment>
+    </>
   );
 };
 
